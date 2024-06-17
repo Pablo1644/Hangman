@@ -4,13 +4,15 @@ import random
 
 # Initialize Pygame
 pygame.init()
-my_file = open("words.txt", "r")
+
+# Opening our file
+my_file = open("words.txt", "r",encoding="utf-8") # polish signs
 data = my_file.read()
 words = data.split("\n")
 word = random.choice(words) #  Random word
 pygame.display.set_caption('Wisielec') # Title
 # VARIABLES
-checked_letters = []
+checked_letters = []    # list for input letters
 
 
 
@@ -27,7 +29,8 @@ class Game:
             pygame.draw.line(self.screen, (0, 0, 0), cords, (cords[0] + length, cords[1]))
             cords = (cords[0] + 2 * length, cords[1])
         pygame.display.flip()
-
+    
+    # printing lines - each line for each char
     def print_lines(self, word, letter):
         cords = (100, 200)
         length = int(300 / len(word))
@@ -37,25 +40,28 @@ class Game:
                 self.draw_text(w, pygame.font.Font(None, 36), (255, 255, 255), cords[0] + length // 2, cords[1] - 20)
             cords = (cords[0] + 2 * length, cords[1])
         pygame.display.flip()
-
+    
+    # printing input letters
     def print_checked_letters(self):
         x_start = 50
         y = 50
         for idx, letter in enumerate(checked_letters):
             x = x_start + idx * 30
             self.draw_text(letter, pygame.font.Font(None, 40), (255, 255, 255), x, y)
-
+    
+    # printing proper chars for our word
     def draw_text(self, text, font, color, x, y):
         text_surface = font.render(text, True, color)
         text_rect = text_surface.get_rect()
         text_rect.center = (x, y)
         self.screen.blit(text_surface, text_rect)
-
+    
+    # drawing hangman
     def draw_hangman(self):
         cord = (500, 550)
         length = 90
         width = 4
-        match self.lifes:
+        match self.lifes: # after every mistake life is decreased.
             case 11:
                 pygame.draw.line(self.screen, (0, 0, 0), cord, (cord[0] + length, cord[1]),width)
             case 10:
@@ -90,7 +96,8 @@ class Game:
                 pygame.draw.line(self.screen, (0, 0, 0), cord, (cord[0] + length / 8, cord[1] + length / 4), width)
                 return False
         self.lifes -= 1
-
+    
+    # main function 
     def make_game(self, word):
         counter = word.__len__()
         running = True
@@ -111,19 +118,17 @@ class Game:
                         else:
                             if letter not in checked_letters:
                                 checked_letters.append(letter)
-                                print(checked_letters)
-                                counter-=1
+                                decrement = word.count(letter) # case if there is more than one correct letter in word - for example in "ananas",there is 3 "a".
+                                counter-=decrement
                         self.print_lines(word, letter)
                 if counter == 0:
                     running = False
                 self.print_checked_letters()
                 pygame.display.flip()
-            # Draw lines and letter on the screen
-            #self.print_lines(word, letter)
 
         pygame.quit()
-        sys.exit()
+        sys.exit() 
 
 
-scr = Game()
-scr.make_game(word)
+scr = Game() # object from class Game
+scr.make_game(word) #
