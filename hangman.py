@@ -131,4 +131,4 @@ class Game:
 
 
 scr = Game() # object from class Game
-scr.make_game(word) #
+scr.make_game(word) 
