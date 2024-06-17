@@ -24,3 +24,12 @@ If you haven't installed Pygame yet, you can install it using `pip`, the Python 
 ```bash
 pip install pygame
 ```
+
+# Files
+
+This repository contains the following files:
+
+- **hangman.py**: Contains the main logic for the GUI version of Hangman using Pygame.
+- **wisielec_console_version.py**: Contains the console-based version of Hangman.
+- **words.txt**: Contains a list of words that the game randomly selects from.
+
