@@ -33,3 +33,8 @@ This repository contains the following files:
 - **wisielec_console_version.py**: Contains the console-based version of Hangman.
 - **words.txt**: Contains a list of words that the game randomly selects from.
 
+# License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
