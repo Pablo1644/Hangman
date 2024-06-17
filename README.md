@@ -8,7 +8,9 @@ This repository contains a simple Hangman game implemented in Python using the P
 - Guess letters by typing them on your keyboard.
 - Each incorrect guess will draw part of the hangman.
 - You have 11 attempts to guess the word correctly before the hangman is fully drawn.
+- Used letters are shown on the screen. 
 
+![Screen from game](https://github.com/Pablo1644/Hangman/blob/main/hangman.png) 
 ## Setup
 
 ### Clone the repository
