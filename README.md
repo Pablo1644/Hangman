@@ -12,7 +12,7 @@ This repository contains a simple Hangman game implemented in Python using the P
 - Words are in polish.
   
 ![Screen from game](https://github.com/Pablo1644/Hangman/blob/main/hangman.png) 
-Screen from game - word "korozja".
+</br> Screen from game - word "korozja".
 ## Setup
 
 ### Clone the repository
