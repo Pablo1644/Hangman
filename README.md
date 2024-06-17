@@ -16,10 +16,11 @@ This repository contains a simple Hangman game implemented in Python using the P
 ```bash
 git clone https://github.com/Pablo1644/Hangman.git
 cd Hangman
-
+```
 ## Install Pygame
 
 If you haven't installed Pygame yet, you can install it using `pip`, the Python package installer.
 
 ```bash
 pip install pygame
+```
