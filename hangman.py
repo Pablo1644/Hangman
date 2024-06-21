@@ -105,8 +105,8 @@ class Game:
                         if letter not in my_word:
                             if letter not in checked_letters:
                                 checked_letters.append(letter)
-                                    if self.draw_hangman() is  False:
-                                        running = False
+                                if self.draw_hangman() is False:
+                                    running = False
                         else:
                             if letter not in checked_letters:
                                 checked_letters.append(letter)
@@ -119,7 +119,7 @@ class Game:
                 self.print_checked_letters()
                 pygame.display.flip()
 
-        print(my_word)
+        print(word)
         pygame.quit()
         sys.exit()
 
